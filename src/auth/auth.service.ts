@@ -109,6 +109,24 @@ export class AuthService {
     };
   }
 
+
+    // 
+    //  FOR GET USER BY ID
+async getUserById(userId: number) {
+  const user = await this.userRepository.findOne({
+    where: {
+      id: userId,
+    },
+  });
+
+  if (!user) {
+    throw new ConflictException('User not found');
+  }
+
+  const { password, ...result } = user;
+
+  return result;
+}
   // =========================================================
   // GENERATE ACCESS TOKEN + REFRESH TOKEN
   // =========================================================
