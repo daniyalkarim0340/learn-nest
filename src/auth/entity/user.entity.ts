@@ -12,7 +12,6 @@ export enum UserRole {
   USER = 'user',
   ADMIN = 'admin',
 }
-
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
