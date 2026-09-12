@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Posts } from './post/entites/post_entity';
 import { AuthModule } from './auth/auth.module';
 import { User } from './auth/entity/user.entity';
+import { ProductModule } from './product/product.module';
 @Module({
   imports: [
    TypeOrmModule.forRoot({
@@ -23,7 +24,7 @@ import { User } from './auth/entity/user.entity';
       envFilePath: '.env',
       isGlobal: true,
     }), 
-   PostModule, AuthModule],
+   PostModule, AuthModule, ProductModule],
   controllers: [AppController],
   providers: [AppService],
 })
